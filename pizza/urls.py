@@ -6,4 +6,5 @@ urlpatterns = {
     path('', views.index, name='index'),
     path('news', views.news, name='news'),
     path('widok', views.widok, name='widok'),
+    path('gallery', views.gallery, name='gallery'),
 }

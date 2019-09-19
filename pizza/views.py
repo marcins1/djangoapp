@@ -12,3 +12,7 @@ def news(request):
 
 def widok(request):
     return HttpResponse("<h1>Widok</h1>")
+
+
+def gallery(request):
+    return render(request, 'pizza/gallery.html')
