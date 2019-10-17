@@ -28,9 +28,14 @@ class Pizza(models.Model):
 
     data = models.DateField('dodano', auto_now_add=True)
 
+    def __str__(self):
+        return self.nazwa;
+
+    class Meta:
+        verbose_name_plural = "pizze"
 
 class Skladnik(models.Model):
-    pizze = models.ManyToManyField(Pizza, related_name='skladniki')
+    pizze = models.ManyToManyField(Pizza, related_name='skladniki', null=True, blank=True)
     nazwa = models.CharField('skladnik', max_length=30)
     jarski = models.BooleanField(
         'jarski?',
@@ -38,3 +43,9 @@ class Skladnik(models.Model):
         default=False
     )
     cena = models.DecimalField(max_digits=3, decimal_places=2, default=0)
+
+    def __str__(self):
+        return self.nazwa;
+
+    class Meta:
+        verbose_name_plural = "skladniki"
