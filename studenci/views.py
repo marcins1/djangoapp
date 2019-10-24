@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from studenci.models import Miasto, Uczelnia
+from django.contrib import messages
 
 
 # Create your views here.
@@ -12,10 +13,13 @@ def miasta(request):
     if request.method == 'POST':
         nazwa = request.POST.get('nazwa')
         kod = request.POST.get('kod')
-        m = Miasto(nazwa=nazwa, kod=kod)
-        m.save()
-        print(nazwa)
-        print(kod)
+        if len(nazwa.strip()):
+            m = Miasto(nazwa=nazwa, kod=kod)
+            m.save()
+            messages.error(request, "Dane zapisano!")
+        else:
+            messages.error(request, "Błędne dane!")
+
 
     miasta = Miasto.objects.all()
     kontekst = {

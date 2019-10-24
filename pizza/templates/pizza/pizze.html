@@ -1,14 +1,20 @@
 {% extends 'szablon.html' %}
 
-{% block naglowek %}Miasta{% endblock naglowek %}
+{% block naglowek %}Pizze{% endblock naglowek %}
 
 {% block tresc %}
-<h2>Dodaj miasto</h2>
+<h2>Dodaj pizze</h2>
 <form action="." method="POST">
     {% csrf_token %}
     <input type="text" name="nazwa" maxlength="30">
     <br>
-    <input type="text" name="kod" maxlength="6">
+    <input type="text" name="opis" maxlength="6">
+    <br>
+    <input type="text" name="rozmiar" maxlength="6">
+    <br>
+    <input type="text" name="cena" maxlength="6">
+    <br>
+    <input type="text" name="data" maxlength="6">
     <br>
     <input type="submit" value="Zapisz">
 </form>
