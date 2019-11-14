@@ -1,0 +1,6 @@
+1. python manage.py startapp users - Tworzy nową aplikację
+2. Utworzenie pliku urls.py
+3. Podpiecie url aplikacji do url projektu (    path('users/', include('users.urls')), w głównym urls.py       )
+4. Dodanie aplikacji do słownika installed apps     'users.apps.UsersConfig'     w settings.py
+5. Dodanie szablonu (templates)
+6. views.py

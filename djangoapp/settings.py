@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'pizza.apps.PizzaConfig',
     'studenci.apps.StudenciConfig',
     'django.contrib.admin',
