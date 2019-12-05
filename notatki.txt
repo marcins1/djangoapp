@@ -4,3 +4,11 @@
 4. Dodanie aplikacji do słownika installed apps     'users.apps.UsersConfig'     w settings.py
 5. Dodanie szablonu (templates)
 6. views.py
+
+
+
+
+
+pip list
+pip freeze
+pip freeze > requirements.txt

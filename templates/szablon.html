@@ -35,6 +35,11 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Użytkownicy</a>
                 <div class="dropdown-menu">
                     <a href="{% url 'users:rejestruj' %}" class="dropdown-item">Rejestracja</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'users:wyloguj' %}" class="dropdown-item">Wyloguj</a>
+                    {% else %}
+                        <a href="{% url 'users:loguj' %}" class="dropdown-item">Logowanie</a>
+                    {% endif %}
                 </div>
             </li>
             </ul>
